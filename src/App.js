@@ -5,7 +5,7 @@ export default function App() {
       {/* Main */}
       <div className="main">
         <div className="header">
-          <h3 className="header-name">bill</h3>
+          <h3 className="header-name">flow</h3>
           <p className="header-amount">$0.00</p>
         </div>
         <div className="sub">
