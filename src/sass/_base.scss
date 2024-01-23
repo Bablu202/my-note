@@ -1,22 +1,13 @@
-:root {
-  /* theme 2  */
-  --color-white: #fff4e6;
-  --color-cream: #f2ebbf;
-  /* theme 1  */
-  --color-yellow: #f2c849;
-  --color-green: #b4cf66;
-  /* theme -3 */
-  --color-red: #f2421b;
-  --color-blue: #0378a6;
-  /* background */
-  --color-black: #0d0d0d;
-  --color-text: #495057;
-}
-
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+body {
+  padding: 1.8rem;
 }
 
 html {
@@ -26,6 +17,7 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   color: var(--color-text);
   font-size: 1.5rem;
@@ -35,3 +27,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/*
+0   - 600px     - Mobile
+600 - 900px   - Tablet
+900 - 1200px  - Tablet landscape mode
+here the default computer first our scss comes
+1800px  - Laptops
+1200px  - Big Moniters  no much change
+
+
+*/

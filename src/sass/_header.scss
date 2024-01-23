@@ -1,0 +1,33 @@
+.app {
+  border: 1px solid $color-cream;
+  padding: 1rem;
+}
+
+.main {
+  margin-top: 3rem;
+}
+.header {
+  margin: 1rem;
+  &-name {
+    color: #b4cf66;
+  }
+}
+
+/* <div className="main">
+        <div className="header">
+          <h3 className="header-name">bill</h3>
+          <p className="header-amount">$0.00</p>
+        </div>
+        <div className="sub">
+          <ul className="sub-lists">
+            <li className="sub-list">
+              <span className="sub-list--name">Rent</span>
+              <span className="sub-list--price">Price</span>
+            </li>
+            <li className="sub-list">
+              <span className="sub-list--name">travel</span>
+              <span className="sub-list--price">Price</span>
+            </li>
+          </ul>
+        </div>
+      </div> */
