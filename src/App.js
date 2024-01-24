@@ -1,5 +1,9 @@
 import "./sass/main.scss";
 export default function App() {
+  function handleAddExpense(e) {
+    e.preventDefault();
+    console.log("add");
+  }
   return (
     <div className="app">
       {/* Main */}
@@ -40,7 +44,7 @@ export default function App() {
         </ul>
       </div>
       {/* form */}
-      <form className="form">
+      <form className="form" onSubmit={handleAddExpense}>
         <div className="form-input">
           <input
             placeholder="spent on.."
