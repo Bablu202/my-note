@@ -67,9 +67,9 @@ export default function App() {
             className="form-input--name"
             type="text"
             value={expenses.expenseName}
-            onChange={(e) =>
-              setExpenses({ ...expenses, expenseName: e.target.value })
-            }
+            onChange={function (e) {
+              expenses.expenseName = e.target.value;
+            }}
           />
           <input
             type="number"
@@ -77,9 +77,9 @@ export default function App() {
             // placeholder="0.00"
             className="form-input--price"
             value={expenses.priceValue}
-            onChange={(e) =>
-              setExpenses({ ...expenses, priceValue: e.target.value })
-            }
+            onChange={function (e) {
+              expenses.priceValue = e.target.value;
+            }}
           />
           <button className="form-input--btn btn" onClick={handleAddExpense}>
             $ add
