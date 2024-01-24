@@ -1,0 +1,40 @@
+.bills-box {
+  &--list {
+    list-style: none;
+    padding: 2rem;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  .bill {
+    padding: 1rem;
+    margin: 1rem;
+    color: $color-blue;
+    font-size: 4rem;
+    display: flex;
+    margin-bottom: 3rem;
+    border-bottom: 0.1px solid $color-cream;
+
+    &-price {
+      //  color: $color-black;
+      margin-left: auto;
+      color: $color-red;
+    }
+  }
+}
+
+/*<div className="bills-box">
+        <ul className="bills-box--list">
+          <li className="bill">
+            <span className="bill-name">name of the expense </span>
+            <span className="bill-price">001</span>
+          </li>
+          <li className="bill">
+            <span className="bill-name">name of the expense </span>
+            <span className="bill-price">002</span>
+          </li>
+          <li className="bill">
+            <span className="bill-name">name of the expense </span>
+            <span className="bill-price">003</span>
+          </li>
+        </ul>
+      </div>*/

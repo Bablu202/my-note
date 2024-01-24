@@ -6,17 +6,17 @@ export default function App() {
       <div className="main">
         <div className="header">
           <h3 className="header-name">flow</h3>
-          <p className="header-amount">$0.00</p>
+          <p className="header-amount">0.00</p>
         </div>
         <div className="sub">
           <ul className="sub-lists">
             <li className="sub-list">
-              <span className="sub-list--name">Rent</span>
-              <span className="sub-list--price">Price</span>
+              <span className="sub-list--name">one</span>
+              <span className="sub-list--price">0.00</span>
             </li>
             <li className="sub-list">
-              <span className="sub-list--name">travel</span>
-              <span className="sub-list--price">Price</span>
+              <span className="sub-list--name">two</span>
+              <span className="sub-list--price">0.00</span>
             </li>
           </ul>
         </div>
@@ -27,25 +27,38 @@ export default function App() {
           {/* sub-list */}
           <li className="bill">
             <span className="bill-name">name of the expense </span>
-            <span className="bill-price">001</span>
+            <span className="bill-price">-1.00$</span>
           </li>
           <li className="bill">
             <span className="bill-name">name of the expense </span>
-            <span className="bill-price">002</span>
+            <span className="bill-price">-2.50$</span>
           </li>
           <li className="bill">
             <span className="bill-name">name of the expense </span>
-            <span className="bill-price">003</span>
+            <span className="bill-price">-35.85$</span>
           </li>
         </ul>
       </div>
       {/* form */}
       <form className="form">
         <div className="form-input">
-          <input className="form-input--name" type="text" />
-          <input className="form-input--price" type="number" />
+          <input
+            placeholder="spent on.."
+            className="form-input--name"
+            type="text"
+            id="expense"
+            required
+          />
+          <input
+            type="number"
+            step="0.01"
+            placeholder="0.00"
+            className="form-input--price"
+            id="price"
+            required
+          />
+          <button className="form-input--btn btn">$ add</button>
         </div>
-        <button className="btn--add">$ add</button>
       </form>
     </div>
   );

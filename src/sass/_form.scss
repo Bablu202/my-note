@@ -1,0 +1,36 @@
+.form {
+  margin: 1rem;
+  padding: 1rem;
+  width: 95%;
+  margin-bottom: 1rem;
+
+  &-input {
+    display: flex;
+    justify-content: space-around;
+
+    &--name {
+      background-color: rgba($color-blue, $alpha: 0.15);
+      height: 100%;
+      width: 60%;
+    }
+    &--price {
+      text-align: center;
+      background-color: rgba($color-blue, $alpha: 0.15);
+      height: 100%;
+      width: 20%;
+    }
+    &--btn {
+      background-color: $color-red;
+      color: $color-white;
+      font-weight: 600;
+    }
+  }
+}
+
+/*<form className="form">
+        <div className="form-input">
+          <input className="form-input--name" type="text" />
+          <input className="form-input--price" type="number" />
+          <button className="form-input--btn btn">$ add</button>
+        </div>
+      </form>*/
