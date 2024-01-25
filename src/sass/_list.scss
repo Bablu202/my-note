@@ -19,6 +19,12 @@
       margin-left: auto;
       color: $color-red;
     }
+    &-edit--btn {
+      color: $color-blue;
+    }
+    &-delete--btn {
+      color: $color-red;
+    }
   }
 }
 
@@ -27,14 +33,16 @@
           <li className="bill">
             <span className="bill-name">name of the expense </span>
             <span className="bill-price">001</span>
+            <span className="bill-edit">
+            <button className="bill-edit--btn">
+              <AiFillEdit />
+            </button>
+          </span>
+          <span className="bill-delete">
+            <button className="bill-delete--btn">
+              <AiFillDelete />
+            </button>
           </li>
-          <li className="bill">
-            <span className="bill-name">name of the expense </span>
-            <span className="bill-price">002</span>
-          </li>
-          <li className="bill">
-            <span className="bill-name">name of the expense </span>
-            <span className="bill-price">003</span>
-          </li>
+         
         </ul>
       </div>*/
