@@ -4,8 +4,11 @@
 }
 
 .main {
+  backdrop-filter: blur(30px);
+
   margin-top: 0;
   width: 100vw;
+  position: fixed;
 
   .header {
     //background-color: $color-yellow;

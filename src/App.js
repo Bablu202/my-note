@@ -20,9 +20,10 @@ function ExpensesApp() {
   // ]);
   const [expenses, setExpenses] = useState([]);
   const [error, setError] = useState("");
+  const [editMode, setEditMode] = useState(false);
   let defaultExpense = { id: null, expenseName: "", priceValue: "" };
   const [moreExpense, setMoreExpense] = useState(defaultExpense);
-
+  //Handle Add Button
   const handleAddExpense = async (e) => {
     e.preventDefault();
     console.log("added");
@@ -39,17 +40,31 @@ function ExpensesApp() {
     if (error) console.log(error);
     setMoreExpense(defaultExpense);
   };
-  const handleEdit = async (id) => {
+  //Handle Edit
+  const handleEdit = (id) => {
+    setEditMode(true);
     const editExpense = expenses.filter((e) => e.id === id);
     setMoreExpense(editExpense[0]);
     console.log(id);
-    const { data, error } = await supabase
+  };
+  //Update Edit Mode
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    let id = moreExpense.id;
+    console.log(moreExpense);
+    const { data: db, error } = await supabase
       .from("expenseTable")
       .update({
         expenseName: moreExpense.expenseName,
       })
       .eq("id", id);
+    console.log(db);
+    if (db) setExpenses(db);
+    if (error) setError(error);
+    setEditMode(false);
+    setMoreExpense(defaultExpense);
   };
+  //Handle Delete
   const handleDelete = async (id) => {
     await supabase.from("expenseTable").delete().eq("id", id);
     if (!error) {
@@ -58,12 +73,14 @@ function ExpensesApp() {
       setError(error);
     }
   };
+  //getting dataBase
   const getBaseDataExpense = async () => {
     const refExpenseData = await supabase.from("expenseTable").select("*");
     setExpenses(refExpenseData.data);
   };
-
+  //total Expense
   const totalExpenseValue = "";
+
   useEffect(() => {
     getBaseDataExpense();
   }, []);
@@ -83,6 +100,8 @@ function ExpensesApp() {
         moreExpense={moreExpense}
         setMoreExpense={setMoreExpense}
         handleAddExpense={handleAddExpense}
+        editMode={editMode}
+        handleUpdate={handleUpdate}
       />
     </div>
   );
@@ -98,7 +117,13 @@ function Header() {
 }
 /*FORM EXPENSE----------------------------------------------------------------*/
 
-function FormExpense({ moreExpense, setMoreExpense, handleAddExpense }) {
+function FormExpense({
+  moreExpense,
+  setMoreExpense,
+  handleAddExpense,
+  editMode,
+  handleUpdate,
+}) {
   return (
     <form className="form">
       <div className="form-input">
@@ -121,9 +146,15 @@ function FormExpense({ moreExpense, setMoreExpense, handleAddExpense }) {
             setMoreExpense({ ...moreExpense, priceValue: e.target.value });
           }}
         />
-        <button className="form-input--btn btn" onClick={handleAddExpense}>
-          $ add
-        </button>
+        {!editMode ? (
+          <button className="form-input--btn btn" onClick={handleAddExpense}>
+            $ add
+          </button>
+        ) : (
+          <button className="form-input--btn btn" onClick={handleUpdate}>
+            $ change
+          </button>
+        )}
       </div>
     </form>
   );
